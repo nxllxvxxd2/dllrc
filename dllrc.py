@@ -149,7 +149,7 @@ def init_cache(root_folder: str) -> None:
     except Exception as e:
         debug(f"Error initializing cache: {e}")
         _cache_conn = None
-        def cache_get(artist: str, title: str, album: Optional[str], duration: Optional[float]) -> List[Dict[str, Any]]:
+def cache_get(artist: str, title: str, album: Optional[str], duration: Optional[float]) -> List[Dict[str, Any]]:
     if _cache_conn is None:
         return []
     try:
@@ -317,7 +317,7 @@ def lyricsovh_fetch(artist: Optional[str],
     except Exception as e:
         debug(f"Lyrics.ovh error: {e}")
         return None
-        def chartlyrics_fetch(artist: Optional[str],
+def chartlyrics_fetch(artist: Optional[str],
                       title: Optional[str]) -> Optional[str]:
     if not artist or not title:
         return None
@@ -456,7 +456,7 @@ def lyricsify_fetch(artist: Optional[str],
     except Exception as e:
         debug(f"Lyricsify error: {e}")
         return None
-        def fetch_all_sources(artist: Optional[str],
+def fetch_all_sources(artist: Optional[str],
                       title: Optional[str],
                       album: Optional[str],
                       duration: Optional[float]) -> List[Dict[str, Any]]:
